@@ -1,15 +1,12 @@
 # Pixegami Terminal Profile
+# Edited by Zvck
 
 ![terminal](./terminal_screenshot.png)
 
-This is my profile for UNIX (MacOS/Linux) terminals. For Ubuntu, I just use the default terminal
-app. For MacOS, I use [iTerm2](https://iterm2.com/).
+This is Pixegami profile for UNIX (MacOS/Linux) terminals. For Ubuntu, I just use the default terminal
+app.
 
-> In the MacOS case, I have successfully installed this theme once before, but most of the terminal commands
-> will be different. You'll just have to open the `.sh` files and figure out how to adapt it to MacOS
-> until I can prepare MacOS commands.
-
-These commands were last tested on May 2022 on Ubuntu 20.
+These commands were last tested on November 2025 on Ubuntu 24.04.3 LTS.
 
 # Prerequisites
 
