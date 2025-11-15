@@ -1,13 +1,17 @@
-# Fail on any command.
-set -eux pipefail
+#!/usr/bin/env bash
+# Fail on any error, undefined var, or pipe failure.
+set -euo pipefail
 
-# Install Powerline for VIM.
-sudo apt install -y python3-pip
-pip3 install --user powerline-status
-sudo cp configs/.vimrc ~/.vimrc
-sudo apt install -y fonts-powerline
+# Install Powerline for VIM via APT (no pip issues).
+sudo apt update
+sudo apt install -y python3-pip powerline fonts-powerline
 
-# Install Patched Font
-mkdir ~/.fonts
-sudo cp -a fonts/. ~/.fonts/
-fc-cache -vf ~/.fonts/
+# Copy VIM config (no sudo, so ~/.vimrc stays owned by the user).
+cp configs/.vimrc "$HOME/.vimrc"
+
+# Install patched fonts from the repo.
+mkdir -p "$HOME/.fonts"
+cp -a fonts/. "$HOME/.fonts/"
+
+# Rebuild font cache so the new fonts are recognized.
+fc-cache -vf "$HOME/.fonts/"
